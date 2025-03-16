@@ -11,7 +11,8 @@ public class MessageUtils {
 
 	public static Message fromJson(String msg) {
 
-		JsonObject json = JsonParser.parseString(msg).getAsJsonObject();
+		JsonParser jsonParser = new JsonParser();
+		JsonObject json = jsonParser.parse(msg).getAsJsonObject();
 		
 		String typestr = json.get("type").getAsString();
 
